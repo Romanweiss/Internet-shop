@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render  # render - для отрисовки html страницы
 
 # Здесь записываются функции или классы, которые обрабатывают запросы от пользователей
 
@@ -7,7 +7,16 @@ from django.shortcuts import render
 def index(request):  # вся информация о запросе хранится в запросе 
   # (в него попадает экз класса httpRequest, который содержит в себе все данные о запросе: какой пользователь - 
   # аноним/зарегистрированный, файлы куки, метод запроса (get/post))
-  return HttpResponse('Home page')
+  # return HttpResponse('Home page') будет просто страница с указанным в аргументе текстом
+  context = {
+		'title': 'Home',
+		'content': 'Главная страница магазина - HOME',
+		'list': ['first', 'second'],
+		'dict': {'first': 1},
+		'is_authenticated': False
+	} # имитация подгрузки контента вместо бд
+  return render(request, 'main/index.html', context)  # request- для информации, адрес шаблона страницы, context - наш словарь
+
 
 
 def about(request):
