@@ -65,9 +65,9 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
+DATABASES = {  # указывает на используемую в приложении БД
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',  # используемый движок
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
@@ -95,7 +95,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'  # язык проекта и админ панели
+LANGUAGE_CODE = 'ru'  # язык проекта и админ панели
 
 TIME_ZONE = 'UTC'  # временная зона
 
@@ -119,4 +119,4 @@ STATICFILES_DIRS = [
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'  # для создания id в бд по порядковому номеру
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'  # для создания id от 1 в бд по порядковому номеру с автоматической инкрементацией
