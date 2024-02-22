@@ -59,7 +59,7 @@ class Products(models.Model):
     price = models.DecimalField(
         "Цена",
         default=0.00,  # значение по умолчанию
-        max_digits=7,  # количество знаков до запятой
+        max_digits=4,  # количество знаков до запятой
         decimal_places=2,  # количество знаков после запятой
     )
     discount = models.DecimalField(
